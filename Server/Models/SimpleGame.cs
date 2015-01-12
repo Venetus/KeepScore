@@ -7,6 +7,7 @@ namespace Server.Models
 {
     public class SimpleGame
     {
+        public int Id { get; set; }
         public String Player1Name { get; set; }
         public int Player1Score { get; set; }
 
