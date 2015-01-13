@@ -1,0 +1,28 @@
+ <div style="max-width: 500px">
+ 	<form {{action "addGame" on="Submit"}}>
+ 		<div class="form-group">
+ 			<label>Player 1 Name</label>
+ 			{{input value=model.player1Name classNames="form-control"}}
+ 		</div>
+
+ 		<div class="form-group">
+ 			<label>Player 1 Score</label>
+ 			{{input value=model.player1Score classNames="form-control"}}
+ 		</div>
+
+ 		<br><br>
+ 		<div class="form-group">
+ 			<label>Player 2 Name</label>
+ 			{{input value=model.player2Name classNames="form-control"}}
+ 		</div>
+
+ 		<div class="form-group">
+ 			<label>Player 2 Score</label>
+ 			{{input value=model.player2Score classNames="form-control"}}
+ 		</div>
+
+ 		<button class="btn btn-primary">Spara</button>
+ 	</form>
+ </div>
+
+ {{outlet}}
