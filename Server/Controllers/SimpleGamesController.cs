@@ -8,11 +8,15 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.Description;
 using Server.Models;
 
+
 namespace Server.Controllers
 {
+    
+    [EnableCors(origins: "http://127.0.0.1:4200", headers: "*", methods: "*")]
     public class SimpleGamesController : ApiController
     {
         private KeepScoreDbContext db = new KeepScoreDbContext();
