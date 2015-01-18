@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "keepScore",
   "dependencies": {
     "handlebars": "~1.3.0",
     "jquery": "^1.11.1",

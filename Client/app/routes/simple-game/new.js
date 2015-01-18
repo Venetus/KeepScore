@@ -1,8 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	
-	afterModel: function(){
-		this.transitionTo('simple-game.new');
+	model : function(){
+		return this.store.createRecord('simpleGame');
 	}
 });

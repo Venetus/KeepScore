@@ -1,28 +1,70 @@
- <div style="max-width: 500px">
- 	<form {{action "addGame" on="submit"}}>
- 		<div class="form-group">
- 			<label>Player 1 Name</label>
- 			{{input value=model.player1Name classNames="form-control"}}
- 		</div>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<ul class="nav nav-tabs" style="margin-top: 30px">
+				<li {{bind-attr class="showingTable:active"}}>
+					<a style="cursor:pointer" {{action showTable}}>
+						Table
+					</a>
+				</li>
+				<li {{bind-attr class="showingMatches:active"}}>
+					<a style="cursor:pointer" {{action showMatches}}>
+						Matches
+					</a>
+				</li>
+			</ul>				
+			<div class="container">
+				{{#if showingTable}}
+				<div id="score" class="table-responsive">
+					<table class="table ">
+						<thead></thead>
+						<tbody>
+							<tr>
+								<td>Hello</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				{{/if}}	
 
- 		<div class="form-group">
- 			<label>Player 1 Score</label>
- 			{{input value=model.player1Score classNames="form-control"}}
- 		</div>
+				{{#if showingMatches}}
+					<div id="matches">
+						{{#each game in controller}}
+							<div class="row">
+								<div class="col-xs-3 text-right">
+									<strong>
+									{{game.player1Name}}
+									</strong>
+								</div>
+								<div class="col-xs-1 text-center">
+									{{game.player1Score}}
+								</div>
 
- 		<br><br>
- 		<div class="form-group">
- 			<label>Player 2 Name</label>
- 			{{input value=model.player2Name classNames="form-control"}}
- 		</div>
+								<div class="col-xs-1 text-center">
+									-
+								</div>
 
- 		<div class="form-group">
- 			<label>Player 2 Score</label>
- 			{{input value=model.player2Score classNames="form-control"}}
- 		</div>
+								<div class="col-xs-1 text-center">
+									{{game.player2Score}}
+								</div>
+								<div class="col-xs-3 text-left">
+									<strong>
+									{{game.player2Name}}
+									</strong>
+								</div>
 
- 		<button class="btn btn-primary">Spara</button>
- 	</form>
- </div>
+								<div class="col-xs-1 text-center">
+									<div style="cursor:pointer"><i class="fa fa-trash"></i></div>
+								</div>
+							</div>
+						{{/each}}
+					</div>
+				{{/if}}
+			</div>
 
- {{outlet}}
+		</div>
+		<div class="col-md-offset-1 col-md-5">
+			{{outlet}}		
+		</div>
+	</div>
+</div>

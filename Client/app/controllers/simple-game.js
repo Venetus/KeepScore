@@ -1,11 +1,16 @@
 import Ember from 'ember';
 
-export default Ember.Controller.extend({
+export default Ember.ArrayController.extend({
 	actions: {
-		addGame: function(){
-			alert('he');
-			var model = this.get('model');
-			model.save();
+		showTable : function(){
+			this.set('showingTable', true);
+			this.set('showingMatches', false);
+		},
+		showMatches : function(){
+			this.set('showingMatches', true);
+			this.set('showingTable', false);
 		}
-	}
+	},
+	showingTable: false,
+	showingMatches: true
 });

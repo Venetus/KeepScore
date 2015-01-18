@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'client',
+    modulePrefix: 'keepScore',
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
@@ -16,7 +16,17 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
-    }
+    },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-eval' http://127.0.0.1:35729",
+      'font-src': "'self' http://fonts.googleapis.com/ http://fonts.gstatic.com/",
+      'connect-src': "'self' ws://127.0.0.1:35729 http://127.0.0.1:57907",
+      'img-src': "'self'",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com/ http://fonts.gstatic.com/",
+      'media-src': "'self'"
+    },
   };
 
   if (environment === 'development') {
