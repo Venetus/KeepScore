@@ -16,7 +16,7 @@ using Server.Models;
 namespace Server.Controllers
 {
     
-    [EnableCors(origins: "http://127.0.0.1:4200", headers: "*", methods: "*")]
+    [EnableCors("*", "*", "*")]
     public class SimpleGamesController : ApiController
     {
         private KeepScoreDbContext db = new KeepScoreDbContext();

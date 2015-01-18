@@ -3,6 +3,16 @@
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
 
+## Visual Studio settings
+* Open %USERPROFILE%\My Documents\IISExpress\config\applicationhost.config
+* Find 
+
+´<binding protocol="http" bindingInformation="*:57907:localhost" />´
+
+and change to
+
+´<binding protocol="http" bindingInformation="*:57907:127.0.0.1" />´
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
