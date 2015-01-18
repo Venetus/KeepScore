@@ -7,9 +7,9 @@ export default Ember.Controller.extend({
 			var player1Name = model.get('player1Name');
 			var player2Name = model.get('player2Name');
 
-			//model.save();	
+			model.save();	
 
-			alert('Your game has been saved') ; //@Todo gör snyggare dialog
+			//alert('Your game has been saved') ; //@Todo gör snyggare dialog
 			this.set('model', this.store.createRecord('simpleGame', { 'player1Name' : player1Name, 'player2Name': player2Name }));
 		}
 	}

@@ -9,8 +9,15 @@ export default Ember.ArrayController.extend({
 		showMatches : function(){
 			this.set('showingMatches', true);
 			this.set('showingTable', false);
+		},
+
+		deleteGame: function(match) {
+			match.destroyRecord();
 		}
 	},
-	showingTable: false,
-	showingMatches: true
+	showingTable: true,
+	showingMatches: false,
+
+	//For future proofing ember-cli 2.0
+	attrs: {}
 });

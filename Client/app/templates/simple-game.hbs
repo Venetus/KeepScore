@@ -13,50 +13,15 @@
 					</a>
 				</li>
 			</ul>				
-			<div class="container">
+			<div style="padding-top: 30px;">
 				{{#if showingTable}}
-				<div id="score" class="table-responsive">
-					<table class="table ">
-						<thead></thead>
-						<tbody>
-							<tr>
-								<td>Hello</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+					{{sm-table matches=attrs.matches}}
 				{{/if}}	
 
 				{{#if showingMatches}}
 					<div id="matches">
-						{{#each game in controller}}
-							<div class="row">
-								<div class="col-xs-3 text-right">
-									<strong>
-									{{game.player1Name}}
-									</strong>
-								</div>
-								<div class="col-xs-1 text-center">
-									{{game.player1Score}}
-								</div>
-
-								<div class="col-xs-1 text-center">
-									-
-								</div>
-
-								<div class="col-xs-1 text-center">
-									{{game.player2Score}}
-								</div>
-								<div class="col-xs-3 text-left">
-									<strong>
-									{{game.player2Name}}
-									</strong>
-								</div>
-
-								<div class="col-xs-1 text-center">
-									<div style="cursor:pointer"><i class="fa fa-trash"></i></div>
-								</div>
-							</div>
+						{{#each match in attrs.matches}}
+							{{sg-match match=match onDelete='deleteGame'}}
 						{{/each}}
 					</div>
 				{{/if}}

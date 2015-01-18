@@ -1,0 +1,29 @@
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>
+				Player 
+			</th>
+			<th>
+				Played 
+			</th>
+			<th>
+				+ 
+			</th>
+			<th>
+				- 
+			</th>
+			<th>
+				Points
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#each playerName in allUniquePlayers}}
+			<tr>
+				<td colspan="5">{{playerName}}</td>
+			</tr>
+		{{/each}}
+	</tbody>
+</table>
+{{yield}}

@@ -7,5 +7,9 @@ export default Ember.Route.extend({
 
 	afterModel: function(){
 		this.transitionTo('simple-game.new');
+	},
+
+	setupController: function(controller, model){
+		controller.set('attrs.matches', model);
 	}
 });
