@@ -1,0 +1,31 @@
+<div  {{bind-attr class="rowClasses"}}>
+	<div class="col-xs-3 text-right">
+		<span {{bind-attr class="player1Wins:winner"}}>
+			{{match.player1Name}}
+		</span>
+	</div>
+	<div class="col-xs-1 text-center">
+		{{match.player1Score}}
+	</div>
+
+	<div class="col-xs-1 text-center">
+		-
+	</div>
+
+	<div class="col-xs-1 text-center">
+		{{match.player2Score}}
+	</div>
+	<div class="col-xs-3 text-left">
+		<span {{bind-attr class="player2Wins:winner"}}>
+			{{match.player2Name}}
+		</span>
+	</div>
+	
+	{{#if showDeleteMatchButton}}
+		<div class="col-xs-1 text-center">
+			<div style="cursor:pointer" {{action "delete"}}><i class="fa fa-trash"></i></div>
+		</div>
+	{{/if}}
+</div>
+
+{{yield}}

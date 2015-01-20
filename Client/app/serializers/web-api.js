@@ -119,7 +119,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
     {props: propsvals}
   and always includes the Id
   */
-  serializeIntoHash: function(hash, type, record, options){
+  serializeIntoHash: function(hash, type, record){
     console.log("Serializer called: serializeIntoHash");
     //Ember.merge(hash, this.serialize(record, options));
     //Always includes Id
@@ -140,7 +140,7 @@ export default DS.RESTSerializer.extend(DS.EmbeddedRecordsMixin, {
       // Embed hasMany relationship if records exist
       if (hasManyRecords && embed) {
           json[key] = [];
-          hasManyRecords.forEach(function(item, index){
+          hasManyRecords.forEach(function(item){
               json[key].push(item.serialize());
           });
       }

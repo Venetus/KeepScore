@@ -1,27 +1,29 @@
-<table class="table table-hover">
+<table id="sm-table" class="table table-hover table-striped">
 	<thead>
 		<tr>
-			<th>
-				Player 
-			</th>
-			<th>
-				Played 
-			</th>
-			<th>
-				+ 
-			</th>
-			<th>
-				- 
-			</th>
-			<th>
-				Points
-			</th>
+			<th class="col-player">Player</th>
+			<th class="col-played">Played</th>
+			<th class="col-wins">Wins</th>
+			<th class="col-loses">Loses</th>
+			<th class="col-draws">Draws</th>
+			<th class="col-plus">+</th>
+			<th class="col-minus">-</th>
+			<th class="col-minus">=</th>
+			<th class="col-points">Points</th>
 		</tr>
 	</thead>
 	<tbody>
-		{{#each playerName in allUniquePlayers}}
-			<tr>
-				<td colspan="5">{{playerName}}</td>
+		{{#each player in players}}
+			<tr {{bind-attr class="player.isEditing"}}>
+				<td>{{player.name}}</td>
+				<td>{{player.played}}</td>
+				<td>{{player.wins}}</td>
+				<td>{{player.loses}}</td>
+				<td>{{player.draws}}</td>
+				<td>{{player.scoreMade}}</td>
+				<td>{{player.scoreConceded}}</td>
+				<td>{{player.scoreDifference}}</td>
+				<td>{{player.points}}</td>
 			</tr>
 		{{/each}}
 	</tbody>

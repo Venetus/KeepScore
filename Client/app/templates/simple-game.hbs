@@ -3,12 +3,12 @@
 		<div class="col-md-6">
 			<ul class="nav nav-tabs" style="margin-top: 30px">
 				<li {{bind-attr class="showingTable:active"}}>
-					<a style="cursor:pointer" {{action showTable}}>
+					<a style="cursor:pointer" {{action 'showTable'}}>
 						Table
 					</a>
 				</li>
 				<li {{bind-attr class="showingMatches:active"}}>
-					<a style="cursor:pointer" {{action showMatches}}>
+					<a style="cursor:pointer" {{action 'showMatches'}}>
 						Matches
 					</a>
 				</li>
@@ -21,7 +21,7 @@
 				{{#if showingMatches}}
 					<div id="matches">
 						{{#each match in attrs.matches}}
-							{{sg-match match=match onDelete='deleteGame'}}
+							{{sm-match match=match onDelete='deleteGame'}}
 						{{/each}}
 					</div>
 				{{/if}}

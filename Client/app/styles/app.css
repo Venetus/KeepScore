@@ -1,3 +1,23 @@
 html, body {
   margin: 20px;
 }
+
+#sm-table {
+
+}
+
+#sm-table .col-player {
+	width: 37%;
+}
+
+#sm-table th {
+	width:9%;
+}
+
+#sm-table .is-editing, #matches .is-editing {
+	background-color: rgb(197, 247, 197);
+}
+
+#matches .winner {
+	font-weight: bold;
+}
